@@ -1,0 +1,9 @@
+takip_no,tarih,konum,durum
+9876543210,2025-12-13 14:00,İstanbul Şube,Kabul Edildi
+1234567890,2025-12-14 10:30,İzmir Depo,Kabul Edildi
+9876543210,2025-12-14 11:00,İstanbul Transfer Merkezi,Transfer Sürecinde
+1234567890,2025-12-14 15:45,İzmir Transfer Merkezi,Transfer Sürecinde
+1234567890,2025-12-15 03:00,Ankara Ana Merkezi,Merkeze Ulaştı
+1234567890,2025-12-15 08:30,Ankara Dağıtıma Çıktı,Dağıtıma Çıktı
+abc,2025-12-15 20:55,bursa,Merkeze Ulaştı
+abc,2025-12-15 21:12,bursa,Dağıtıma Çıktı
