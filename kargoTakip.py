@@ -13,9 +13,9 @@ import os
 # DİKKAT: SABİT DOSYA YOLU ATAMASI
 # Lütfen bu 3 satırı, Mac'inizdeki CSV dosyalarının TAM YOLU ile değiştirin.
 # =========================================================================
-CSV_LOGLARI = '/Users/berra/Desktop/CARGOTRAKKINGAPP/kargo_loglari.csv'
-CSV_KULLANICILAR = '/Users/berra/Desktop/CARGOTRAKKINGAPP/kullanicilar.csv'
-CSV_KARGOLAR_ANA = '/Users/berra/Desktop/CARGOTRAKKINGAPP/kargolar_ana.csv'
+CSV_LOGLARI = '/Users/berra/Desktop/Cargo_TrackingApp/kargo_loglari.csv'
+CSV_KULLANICILAR = '/Users/berra/Desktop/Cargo_TrackingApp/kullanicilar.csv'
+CSV_KARGOLAR_ANA = '/Users/berra/Desktop/Cargo_TrackingApp/kargolar_ana.csv'
 
 # --- 1. CSV Tabanlı Veritabanı Sınıfı (3 Tabloyu Yönetir) ---
 class CargoDatabase:
