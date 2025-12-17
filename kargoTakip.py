@@ -9,13 +9,20 @@ from datetime import datetime, timedelta
 import pandas as pd
 import os
 
-# =========================================================================
-# DİKKAT: SABİT DOSYA YOLU ATAMASI
-# Lütfen bu 3 satırı, Mac'inizdeki CSV dosyalarının TAM YOLU ile değiştirin.
-# =========================================================================
-CSV_LOGLARI = '/Users/berra/Desktop/Cargo_TrackingApp/kargo_loglari.csv'
-CSV_KULLANICILAR = '/Users/berra/Desktop/Cargo_TrackingApp/kullanicilar.csv'
-CSV_KARGOLAR_ANA = '/Users/berra/Desktop/Cargo_TrackingApp/kargolar_ana.csv'
+# ===============================
+# PyInstaller uyumlu dosya yolu
+# ===============================
+def resource_path(relative_path):
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
+DATA_DIR = resource_path("data")
+
+CSV_LOGLARI = os.path.join(DATA_DIR, "kargo_loglari.csv")
+CSV_KULLANICILAR = os.path.join(DATA_DIR, "kullanicilar.csv")
+CSV_KARGOLAR_ANA = os.path.join(DATA_DIR, "kargolar_ana.csv")
+
 
 # --- 1. CSV Tabanlı Veritabanı Sınıfı (3 Tabloyu Yönetir) ---
 class CargoDatabase:
@@ -31,6 +38,7 @@ class CargoDatabase:
         
         def check_and_load(path, cols, is_datetime=False):
             if not os.path.exists(path):
+                os.makedirs(os.path.dirname(path), exist_ok=True)
                 # Dosya yoksa, boş bir DataFrame oluştur ve dosyayı yaz.
                 df = pd.DataFrame(columns=cols)
                 try:
@@ -183,7 +191,7 @@ class CargoTrackingApp(QMainWindow):
         self.personnel_form_widget = self.create_data_entry_form()
         
         self.personnel_tab = self.create_personnel_tab()
-        self.tabs.addTab(self.personnel_tab, "👨‍💼 Veri Girişi (Personel)")
+        self.tabs.addTab(self.personnel_tab, "👨‍💼 Operasyon Paneli")
         
         self.tabs.currentChanged.connect(self.check_personnel_access)
         
