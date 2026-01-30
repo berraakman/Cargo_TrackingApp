@@ -151,5 +151,5 @@ python -m PyInstaller \
 
 ## 📄 Lisans
 
-Bu proje **eğitim ve öğretim amaçlı** geliştirilmiştir.\
+Bu proje **Üniversite dönem dersleri projelerinde eğitim ve öğretim amaçlı** geliştirilmiştir.\
 Ticari kullanım için uygun değildir.
